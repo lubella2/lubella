@@ -1,0 +1,147 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Used by the browser chrome on Android and by the splash screen. */
+    --lubella-rose: #d1809a;
+    --lubella-blush: #fbedf3;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply bg-brand-blush text-brand-ink font-sans antialiased;
+    /* Respect the notch/home indicator on Android and iOS. */
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  /* Money and any tabular figures line up in columns. */
+  .num {
+    @apply font-mono tabular-nums;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Touch targets stay comfortable on a phone (§46). */
+  button,
+  [role='button'],
+  a.btn {
+    min-height: 44px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-brand-line rounded-full;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  input,
+  select,
+  textarea {
+    font-size: 16px; /* stops iOS Safari zooming on focus */
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-white rounded-2xl shadow-card border border-brand-line/60;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 h-11
+           font-medium transition-all active:scale-[0.98] disabled:opacity-50
+           disabled:pointer-events-none select-none;
+  }
+  .btn-primary {
+    @apply btn bg-brand-rose text-white hover:bg-brand-deep shadow-sm;
+  }
+  .btn-secondary {
+    @apply btn bg-brand-blush text-brand-deep hover:bg-brand-line border border-brand-line;
+  }
+  .btn-ghost {
+    @apply btn text-brand-charcoal hover:bg-brand-soft;
+  }
+  .btn-danger {
+    @apply btn bg-state-red text-white hover:brightness-95;
+  }
+  .btn-whatsapp {
+    @apply btn bg-[#25D366] text-white hover:brightness-95;
+  }
+  .btn-telegram {
+    @apply btn bg-[#2AABEE] text-white hover:brightness-95;
+  }
+  .btn-sm {
+    @apply h-9 px-3 text-sm rounded-lg;
+  }
+
+  .input {
+    @apply w-full rounded-xl border border-brand-line bg-white px-3.5 h-11
+           text-brand-ink placeholder:text-brand-muted
+           focus:outline-none focus:ring-2 focus:ring-brand-rose/40 focus:border-brand-rose;
+  }
+  .label {
+    @apply block text-sm font-medium text-brand-charcoal mb-1.5;
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-medium whitespace-nowrap;
+  }
+  .chip-green { @apply chip bg-state-green/10 text-state-green; }
+  .chip-amber { @apply chip bg-state-amber/20 text-[#8a6318]; }
+  .chip-red   { @apply chip bg-state-red/10 text-state-red; }
+  .chip-rose  { @apply chip bg-brand-blush text-brand-deep; }
+  .chip-slate { @apply chip bg-state-slate/10 text-state-slate; }
+
+  /* The horizontal scroll for wide tables, with momentum on iOS. */
+  .table-wrap {
+    @apply w-full overflow-x-auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .table {
+    @apply w-full text-sm border-collapse;
+  }
+  .table thead th {
+    @apply text-left font-semibold text-brand-charcoal bg-brand-soft
+           px-3 py-2.5 whitespace-nowrap sticky top-0 z-10;
+  }
+  .table tbody td {
+    @apply px-3 py-2.5 border-t border-brand-line align-middle;
+  }
+  .table tbody tr:hover {
+    @apply bg-brand-soft/60;
+  }
+
+  .section-title {
+    @apply text-xs font-semibold uppercase tracking-wider text-brand-muted;
+  }
+
+  /* Skeleton shimmer used while a dashboard card loads. */
+  .skeleton {
+    @apply relative overflow-hidden bg-brand-line/60 rounded-lg;
+  }
+  .skeleton::after {
+    content: '';
+    @apply absolute inset-0 animate-shimmer;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+    transform: translateX(-100%);
+  }
+}
+
+/* Hide the scrollbar on horizontal chip rows while keeping them scrollable. */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+@media print {
+  .no-print { display: none !important; }
+  body { background: #fff; }
+  .receipt-print { box-shadow: none !important; border: none !important; }
+}

@@ -1,0 +1,6 @@
+# LuBella — SPA routing for hosts that read this file
+# (Netlify, Cloudflare Pages). Vercel uses app/vercel.json instead.
+#
+# The app is a single-page application: any unknown path must be answered with
+# index.html so that deep links such as /supplier/payables survive a refresh.
+/*    /index.html    200

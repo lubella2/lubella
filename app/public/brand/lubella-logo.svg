@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 300" width="520" height="300" role="img" aria-label="LuBella Cosmetics and Accessories">
+  <title>LuBella Cosmetics &amp; Accessories</title>
+  <!-- Palette sampled from the supplied logo artwork -->
+  <defs>
+    <style>
+      .rose   { fill: #D1809A; }
+      .deep   { fill: #B96482; }
+      .char   { fill: #4A4A4A; }
+      .word   { font-family: Georgia, "Times New Roman", serif; font-style: italic;
+                font-weight: 400; fill: #D1809A; }
+      .strap  { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+                font-weight: 500; fill: #4A4A4A; letter-spacing: 3.2px; }
+    </style>
+  </defs>
+
+  <!-- Leaf sprig below the wordmark's baseline, above the strapline -->
+  <g transform="translate(260 34)">
+    <!-- centre leaf -->
+    <path class="rose" d="M0 40 C -4 18 0 2 10 -12 C 20 4 22 22 14 40 C 8 44 2 44 0 40 Z"/>
+    <!-- left leaf -->
+    <path class="deep" d="M-6 40 C -26 34 -40 20 -46 2 C -26 0 -8 10 -2 28 C -1 33 -2 38 -6 40 Z"/>
+    <!-- right leaf -->
+    <path class="deep" d="M8 38 C 24 28 34 12 36 -6 C 18 -2 6 10 4 26 C 3 31 4 36 8 38 Z"/>
+    <!-- stem -->
+    <path class="rose" d="M6 40 C 6 46 4 50 2 54 L 8 54 C 10 48 10 44 10 40 Z"/>
+  </g>
+
+  <!-- Wordmark -->
+  <text class="word" x="260" y="184" text-anchor="middle" font-size="112" letter-spacing="-1">LuBella</text>
+
+  <!-- Strapline -->
+  <text class="strap" x="262" y="232" text-anchor="middle" font-size="25">COSMETICS &amp; ACCESSORIES</text>
+</svg>

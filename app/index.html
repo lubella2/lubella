@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=5"
+    />
+
+    <title>LuBella Cosmetics &amp; Accessories</title>
+    <meta
+      name="description"
+      content="LuBella Cosmetics &amp; Accessories — browsable catalogue, WhatsApp and Telegram ordering, and the shop's own stock, sales and supplier records."
+    />
+
+    <!-- Brand colour taken from the logo; also the Android status-bar tint. -->
+    <meta name="theme-color" content="#D1809A" />
+    <meta name="color-scheme" content="light" />
+
+    <!-- PWA: installable, and it opens without a browser chrome on a phone. -->
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="LuBella" />
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+    <link rel="icon" href="/icons/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/icons/icon-192.png" />
+    <link rel="mask-icon" href="/brand/lubella-logo.svg" color="#D1809A" />
+
+    <!--
+      Phone numbers here are placeholders for the first paint only. The real
+      WhatsApp number and Telegram handle are read from the database at runtime
+      (rpc_public_filters → fn_public_settings) so they can be changed in
+      Settings without a redeploy (§19).
+    -->
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>
+      <div style="font-family: system-ui, sans-serif; padding: 24px; line-height: 1.6">
+        <h1 style="font-size: 20px">LuBella Cosmetics &amp; Accessories</h1>
+        <p>
+          This shop needs JavaScript to show the catalogue. You can still reach us on WhatsApp at the
+          number published on our page, or visit the shop in person.
+        </p>
+      </div>
+    </noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
