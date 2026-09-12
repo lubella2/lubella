@@ -1,0 +1,35 @@
+# dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# build output
+dist/
+build/
+*.tsbuildinfo
+
+# local environment — never commit keys
+.env
+.env.local
+.env.*.local
+
+# local dev gateway
+devserver/storage/*
+!devserver/storage/.gitkeep
+
+# editor / OS
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+*.swp
+
+# logs
+*.log
+npm-debug.log*
+yarn-error.log*
+
+# supabase CLI
+supabase/.temp/
+supabase/.branches/
