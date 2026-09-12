@@ -1,0 +1,8 @@
+{
+  "name": "lubella-devserver",
+  "private": true,
+  "type": "module",
+  "description": "Local development gateway: Supabase-shaped HTTP API over PostgreSQL, enforcing real RLS.",
+  "scripts": { "start": "node server.mjs" },
+  "dependencies": { "pg": "^8.13.1" }
+}
